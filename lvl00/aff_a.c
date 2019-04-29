@@ -12,6 +12,28 @@
 
 #include <unistd.h>
 
-What the ufck is this?
+int main(int argc, char **argv)
+{
+	int i;
+	
+	i = 0;
 
-int main(void)
+	if (argc == 1 )
+	{
+		write(1, "a", 1);
+	}
+	if(argc == 2)
+	{	
+		while(argv[1][i] != 'a' && argv[1][i] != '\0')
+		{
+			i++;
+		}
+	while (argv[1][i] == 'a')
+		{
+		write(1, "a", 1);
+		break ;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
