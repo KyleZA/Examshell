@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_word.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/30 06:51:30 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/04/30 06:53:47 by kfrancis         ###   ########.fr       */
+/*   Created: 2019/04/30 06:55:40 by kfrancis          #+#    #+#             */
+/*   Updated: 2019/04/30 06:58:42 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int main(int argc, char **argv)
+void ft_putstr(char *str)
 {
 	int i;
 
 	i = 0;
-
-	if (argc == 2)
+	while(str[i] == 0)
 	{
-		while(*argv[1] == ' ' && *argv[1] == '\t')
-			argv[1][i]++;
-		while (*argv[1] != '\t' && *argv[1] != '\0' && *argv[1] != ' ')
-			write(1, &*argv[1]++, 1);
+		write(1, &*str, 1);
+		i++;
 	}
-		write(1, "\n", 1);
-		return (0);
 }
